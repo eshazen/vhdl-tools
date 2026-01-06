@@ -1,0 +1,55 @@
+This directory contains two perl scripts to process VHDL sources with
+user-defined types (records).
+
+  make_textio.pl
+
+    Read VHDL with type definitions, write textio package to
+    support READ/WRITE as space-separated decimal numbers of each
+    record element.
+
+    Input is expected to come from the L0MDT standard data format
+    scripts, so elements may only be defined as:
+
+      std_logic               read/write as 0 or 1
+      std_logic_vector(...)   read/write as signed decimal (32 bits max)
+      <user_type>             user-defined type defined elsewhere in file
+
+    Typical use:
+
+      $ ./make_textio.pl l0mdt_buses_types_pkg.vhd l0mdt_buses_textio_pkg.vhd
+
+      File l0mdt_buses_textio_pkg.vhd exists.  I'm about to over-write it
+      with the textio library.  Is this OK (y/n)?y
+
+      19 user types found
+
+  make_report.pl
+
+    Read two VHDL files:  type definitions, constants
+    Output a simple text report with elements of each user-defined
+    type.  Sample output:
+
+    Note that the width of each std_logic_vector is determined by
+    looking in the file of constants.
+
+    Typical usage:
+
+    $./make_report.pl l0mdt_buses_types_pkg.vhd l0mdt_buses_constants_pkg.vhd
+
+      495 constants read
+      
+      slc_muid_rt
+               slcid                : std_logic_vector(2)
+               slid                 : std_logic_vector(6)
+               bcid                 : std_logic_vector(12)
+      
+      slc_common_rt
+               slcid                : std_logic_vector(2)
+               tcsent               : std_logic
+               poseta               : std_logic_vector(15)
+               posphi               : std_logic_vector(9)
+               ptthresh             : std_logic_vector(4)
+               charge               : std_logic
+      ....
+
+

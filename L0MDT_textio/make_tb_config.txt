@@ -1,0 +1,25 @@
+#
+# sample config file for make_tb.pl
+# for syntax details see http://metacpan.org/pod/Config::File
+#
+
+#--- files section.  Can override with like-named command flags
+files[TYPES] = "l0mdt_buses_types_pkg.vhd"       # MDT type definitions
+files[PKGS] = "../L0MDT_DAQ/my_types_pkg.vhd"    # port types PKG
+files[CONST] = "l0mdt_buses_constants_pkg.vhd"   # constants
+
+#--- ports sections.  One "array-like" item per port
+
+#--- MDT port ---
+mdt[DV] = datavalid   # specify alternative DV signal
+mdt[TIME] = orn,bcn   # specify time tag for vector
+       	              # alternatively "clk" for pipeline clock ticks
+
+mdt[SIGNALS] = orn, bcn, fiberid, elinkid, tdc_r.chanid, tdc_r.coarsetime
+# can specify non-default order for signals 
+# orn, bcn are inserted at front if not specified
+# any omitted signals are set to zero
+
+# ignore a port
+dummy[IGNORE] = yes
+

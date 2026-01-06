@@ -1,0 +1,141 @@
+496 constants read
+
+felix_out_rt
+         data_l               : std_logic_vector(32)
+         data_h               : std_logic_vector(32)
+         dv                   : std_logic
+         header               : std_logic
+         trailer              : std_logic
+
+slc_muid_rt
+         slcid                : std_logic_vector(2)
+         slid                 : std_logic_vector(6)
+         bcid                 : std_logic_vector(12)
+
+slc_common_rt
+         slcid                : std_logic_vector(2)
+         tcsent               : std_logic
+         poseta               : std_logic_vector(15)
+         posphi               : std_logic_vector(9)
+         ptthresh             : std_logic_vector(4)
+         charge               : std_logic
+
+slc_endcap_rt
+         slc_common_r         : SLC_COMMON_rt
+         seg_angdtheta        : std_logic_vector(7)
+         seg_angdphi          : std_logic_vector(4)
+         nswseg_poseta        : std_logic_vector(14)
+         nswseg_posphi        : std_logic_vector(8)
+         nswseg_angdtheta     : std_logic_vector(5)
+
+slc_barrel_rt
+         slc_common_r         : SLC_COMMON_rt
+         rpc0_posz            : std_logic_vector(10)
+         rpc1_posz            : std_logic_vector(10)
+         rpc2_posz            : std_logic_vector(10)
+         rpc3_posz            : std_logic_vector(10)
+         cointype             : std_logic_vector(3)
+
+slcproc_pipe_common_rt
+         busy                 : std_logic
+         destsl               : std_logic_vector(2)
+         phimod               : std_logic_vector(8)
+         inn_vec_mdtid        : std_logic_vector(6)
+         mid_vec_mdtid        : std_logic_vector(6)
+         out_vec_mdtid        : std_logic_vector(6)
+         ext_vec_mdtid        : std_logic_vector(6)
+
+slcproc_pipe_endcap_rt
+         slcproc_pipe_common_r : SLCPROC_PIPE_COMMON_rt
+         slc_endcap_r         : SLC_ENDCAP_rt
+         slc_muid_r           : SLC_MUID_rt
+
+slcproc_pipe_barrel_rt
+         slcproc_pipe_common_r : SLCPROC_PIPE_COMMON_rt
+         slc_barrel_r         : SLC_BARREL_rt
+         slc_muid_r           : SLC_MUID_rt
+
+tdc_rt
+         chanid               : std_logic_vector(5)
+         edgemode             : std_logic_vector(2)
+         coarsetime           : std_logic_vector(12)
+         finetime             : std_logic_vector(5)
+         pulsewidth           : std_logic_vector(8)
+
+tdcpolmux_rt
+         tdc_r                : TDC_rt
+         fiberid              : std_logic_vector(5)
+         elinkid              : std_logic_vector(4)
+         datavalid            : std_logic
+
+slcproc_hps_sf_rt
+         slc_valid            : std_logic
+         slc_muid_r           : SLC_MUID_rt
+         mdtseg_dest          : std_logic_vector(2)
+         vec_mdtid            : std_logic_vector(6)
+         vec_pos              : std_logic_vector(10)
+         vec_ang              : std_logic_vector(10)
+
+tar_rt
+         mdt_tube_layer       : std_logic_vector(5)
+         mdt_tube_num         : std_logic_vector(9)
+         mdt_tube_rho         : std_logic_vector(19)
+         mdt_tube_z           : std_logic_vector(20)
+         mdt_tube_time        : std_logic_vector(18)
+
+hps_lsf_rt
+         data_valid           : std_logic
+         mdt_localx           : std_logic_vector(15)
+         mdt_localy           : std_logic_vector(15)
+         mdt_radius           : std_logic_vector(9)
+
+hps_csf_rt
+         data_valid           : std_logic
+         mdt_localx           : std_logic_vector(15)
+         mdt_localy           : std_logic_vector(15)
+         mdt_radius           : std_logic_vector(9)
+
+slcpipe_ptcalc_rt
+         slc_muid_r           : SLC_MUID_rt
+         phimod               : std_logic_vector(8)
+         charge               : std_logic
+
+sf_rt
+         slc_muid_r           : SLC_MUID_rt
+         vec_mdtid            : std_logic_vector(6)
+         segvalid             : std_logic
+         segpos               : std_logic_vector(17)
+         segangle             : std_logic_vector(11)
+         segquality           : std_logic
+
+ptcalc_rt
+         slc_muid_r           : SLC_MUID_rt
+         eta                  : std_logic_vector(15)
+         pt                   : std_logic_vector(9)
+         ptthresh             : std_logic_vector(4)
+         charge               : std_logic
+         nsegments            : std_logic_vector(2)
+         quality              : std_logic_vector(3)
+
+slcpipe_mtc_endcap_rt
+         slc_muid_r           : SLC_MUID_rt
+         slc_common_r         : SLC_COMMON_rt
+         busy                 : std_logic
+         destsl               : std_logic_vector(2)
+
+slcpipe_mtc_barrel_rt
+         cointype             : std_logic_vector(3)
+         slc_muid_r           : SLC_MUID_rt
+         slc_common_r         : SLC_COMMON_rt
+         busy                 : std_logic
+         destsl               : std_logic_vector(2)
+
+mtc_rt
+         slc_common_r         : SLC_COMMON_rt
+         eta                  : std_logic_vector(15)
+         pt                   : std_logic_vector(9)
+         ptthresh             : std_logic_vector(4)
+         charge               : std_logic
+         procflags            : std_logic_vector(4)
+         nsegments            : std_logic_vector(2)
+         quality              : std_logic_vector(3)
